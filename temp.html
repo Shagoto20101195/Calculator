@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+<style>
+body {
+  background-color: lightblue;
+}
+button {
+  background-color: rgb(25, 77, 90);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+<script>
+function calculate(num1, num2) 
+{
+  var n1 = parseInt(document.getElementsByName("num1")[0].value);
+  var n2 = parseInt(document.getElementsByName("num2")[0].value);
+  var operator = document.querySelector('input[name="operator"]:checked').value;
+  if (operator == "add") 
+  {
+    alert(n1 + n2);
+  } 
+  else if (operator == "subtract")
+  {
+    alert(n1 - n2);
+  } 
+  else if (operator == "multiply") 
+  {
+    alert(n1 * n2);
+  } 
+  else if (operator == "divide") 
+  {
+    alert(n1 / n2);
+  }
+}
+</script>
+</head>
+<body>
+
+<h1>Calculator</h1>
+<form action="Javascript:void(0)">
+  <input type="text" name="num1" value="0">
+  <input type="text" name="num2" value="0">
+  <li>
+    <input type="radio" id="add" name="operator" value="add">
+    <label for="add">Add</label><br>
+  </li>
+  <li>
+    <input type="radio" id="subtract" name="operator" value="subtract">
+    <label for="subtract">Subtract</label><br>
+  </li>
+  <li>
+    <input type="radio" id="multiply" name="operator" value="multiply">
+    <label for="multiply">Multiply</label><br>
+  </li>
+  <li>
+    <input type="radio" id="divide" name="operator" value="divide">
+    <label for="divide">Divide</label><br>
+  </li>
+  <button type="submit" onclick="calculate(num1, num2)">
+    <p><b>Check Result</b></p>
+  </button>
+</form>
+</body>
+</html>
